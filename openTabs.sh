@@ -1,6 +1,6 @@
 #!/bin/bash
 
-lineas=$(wc -l $1 | cut -d ' ' -f1) 
+lineas=$(wc -l < $1)
 
 for ((i=1; i<= $lineas;i++))
 do
