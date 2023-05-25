@@ -69,6 +69,11 @@ while true; do
 
     # Agregar los archivos seleccionados al array
     selected_files+=("${selected[@]}")
+
+    # Eliminar los archivos seleccionados del array de archivos disponibles
+    for file in "${selected[@]}"; do
+        pdf_files=("${pdf_files[@]/$file}")
+    done
 done
 
 # Abrir los archivos PDF seleccionados usando wslview
