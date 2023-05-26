@@ -25,7 +25,7 @@ function abrir_pdf {
 # Mostrar un menú usando Dialog
 dialog --clear --backtitle "Mi aplicación" \
     --title "Materias Apu23" \
-    --menu "Selecciona una opción:" 12 40 5 \
+    --menu "Selecciona una opción:" 12 80 5 \
     1 "PE" \
     2 "PV" \
     3 "BDD2" \
@@ -59,7 +59,7 @@ while true; do
 
     dialog --clear --backtitle "Mi aplicación" \
         --title "Archivos PDF de $materia" \
-        --menu "Selecciona un archivo PDF (Espacio para seleccionar, Enter para abrir):" 16 80 10 "${options[@]}" 2>"${OUTPUT}"
+        --menu "Selecciona un archivo PDF (Espacio para seleccionar, Enter para abrir):" 16 120 10 "${options[@]}" 2>"${OUTPUT}"
 
     # Leer los archivos PDF seleccionados del archivo de salida
     IFS=$'\n' read -r -d '' -a selected <<< "$(cat "${OUTPUT}")"
@@ -86,3 +86,4 @@ read -p "Presiona Enter para continuar..."
 
 # Limpiar los archivos temporales y salir del script
 cleanup
+
